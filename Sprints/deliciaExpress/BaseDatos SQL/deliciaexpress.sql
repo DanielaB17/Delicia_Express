@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2021 a las 18:14:41
+-- Tiempo de generación: 28-10-2021 a las 19:01:34
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 7.3.29
 
@@ -257,18 +257,6 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `aprendiz`
---
-
-CREATE TABLE `aprendiz` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `apellido` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `clientes`
 --
 
@@ -279,20 +267,6 @@ CREATE TABLE `clientes` (
   `ContrasenaClientes` varchar(100) NOT NULL,
   `CiudadClientes` varchar(150) NOT NULL,
   `DireccionClientes` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cocineros`
---
-
-CREATE TABLE `cocineros` (
-  `IdEmpleados` int(11) NOT NULL,
-  `IdCocineros` int(11) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Contrasena` varchar(100) NOT NULL,
-  `EspecialidadCocineros` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -343,19 +317,6 @@ CREATE TABLE `domiciliarios` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleados`
---
-
-CREATE TABLE `empleados` (
-  `IdEmpleados` int(11) NOT NULL,
-  `IdUsuarios` int(11) NOT NULL,
-  `NombreEps` varchar(100) NOT NULL,
-  `IdRoles` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `envios`
 --
 
@@ -383,22 +344,6 @@ CREATE TABLE `facturas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `mediospago`
 --
 
@@ -407,40 +352,6 @@ CREATE TABLE `mediospago` (
   `NombreMedios` varchar(100) NOT NULL,
   `DescripcionMedios` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2021_07_19_151502_aprendiz', 2);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -561,25 +472,19 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`IdRoles`, `NombreRoles`) VALUES
 (1, 'Cliente'),
 (2, 'Administrador'),
-(3, 'Cocinero'),
 (4, 'Domiciliario');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Estructura de tabla para la tabla `tipo`
 --
 
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `tipo` (
+  `IdTipos` int(11) NOT NULL,
+  `NombreTipos` varchar(100) NOT NULL,
+  `DescrTipos` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -602,17 +507,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`IdUsuarios`, `NombreUsuarios`, `ApellidoUsuarios`, `EmailUsuarios`, `ContrasenaUsuarios`, `IdRoles`) VALUES
 (39, 'DANIEL', 'MENDEZ', 'dmendez@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1),
-(53, 'Andres', 'Doncel', 'adoncel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1);
+(53, 'Andres', 'a', 'adoncel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 4);
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `aprendiz`
---
-ALTER TABLE `aprendiz`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `clientes`
@@ -620,13 +519,6 @@ ALTER TABLE `aprendiz`
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`IdClientes`,`EmailClientes`),
   ADD KEY `IdUsuarios` (`IdUsuarios`);
-
---
--- Indices de la tabla `cocineros`
---
-ALTER TABLE `cocineros`
-  ADD PRIMARY KEY (`IdCocineros`,`Email`),
-  ADD KEY `IdEmpleados` (`IdEmpleados`);
 
 --
 -- Indices de la tabla `detallefacturas`
@@ -654,14 +546,6 @@ ALTER TABLE `domiciliarios`
   ADD KEY `IdEmpleados` (`IdEmpleados`);
 
 --
--- Indices de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`IdEmpleados`) USING BTREE,
-  ADD KEY `IdUsuarios` (`IdUsuarios`),
-  ADD KEY `IdRoles` (`IdRoles`);
-
---
 -- Indices de la tabla `envios`
 --
 ALTER TABLE `envios`
@@ -679,29 +563,10 @@ ALTER TABLE `facturas`
   ADD KEY `Fecha` (`FechaPedidos`);
 
 --
--- Indices de la tabla `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
 -- Indices de la tabla `mediospago`
 --
 ALTER TABLE `mediospago`
   ADD PRIMARY KEY (`IdmedioPago`);
-
---
--- Indices de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indices de la tabla `pedidos`
@@ -747,11 +612,10 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`IdRoles`);
 
 --
--- Indices de la tabla `users`
+-- Indices de la tabla `tipo`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+ALTER TABLE `tipo`
+  ADD PRIMARY KEY (`IdTipos`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -766,22 +630,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `aprendiz`
---
-ALTER TABLE `aprendiz`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `IdClientes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `cocineros`
---
-ALTER TABLE `cocineros`
-  MODIFY `IdCocineros` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `domiciliarios`
@@ -790,34 +642,16 @@ ALTER TABLE `domiciliarios`
   MODIFY `IdDomiciliarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  MODIFY `IdEmpleados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
   MODIFY `Idfacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `mediospago`
 --
 ALTER TABLE `mediospago`
   MODIFY `IdmedioPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
@@ -856,16 +690,16 @@ ALTER TABLE `roles`
   MODIFY `IdRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT de la tabla `tipo`
 --
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tipo`
+  MODIFY `IdTipos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- Restricciones para tablas volcadas
@@ -876,12 +710,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `clientes`
   ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`IdUsuarios`) REFERENCES `usuarios` (`IdUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `cocineros`
---
-ALTER TABLE `cocineros`
-  ADD CONSTRAINT `cocineros_ibfk_1` FOREIGN KEY (`IdEmpleados`) REFERENCES `empleados` (`IdEmpleados`);
 
 --
 -- Filtros para la tabla `detallefacturas`
@@ -900,19 +728,6 @@ ALTER TABLE `detallepedidos`
   ADD CONSTRAINT `detallepedidos_ibfk_2` FOREIGN KEY (`IdClientes`) REFERENCES `clientes` (`IdClientes`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `detallepedidos_ibfk_3` FOREIGN KEY (`IdProductos`) REFERENCES `productos` (`IdProductos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `detallepedidos_ibfk_4` FOREIGN KEY (`IdDomiciliarios`) REFERENCES `domiciliarios` (`IdDomiciliarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `domiciliarios`
---
-ALTER TABLE `domiciliarios`
-  ADD CONSTRAINT `domiciliarios_ibfk_1` FOREIGN KEY (`IdEmpleados`) REFERENCES `empleados` (`IdEmpleados`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `empleados`
---
-ALTER TABLE `empleados`
-  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`IdUsuarios`) REFERENCES `usuarios` (`IdUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`IdRoles`) REFERENCES `roles` (`IdRoles`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `envios`
