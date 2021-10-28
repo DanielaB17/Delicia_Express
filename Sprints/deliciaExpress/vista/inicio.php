@@ -72,20 +72,10 @@
 			$fila = mysqli_fetch_assoc($result);
 			echo $fila['total'];
 		?>		
-		</td>
-		<td>
-		<?php
-		include '../modelo/conexion.php';
-			$sql = "SELECT COUNT(*) total FROM cocineros";
-			$result = mysqli_query($conn, $sql);
-			$fila = mysqli_fetch_assoc($result);
-			echo $fila['total'];
-		?>	
 		</td>	
 	</tr>
 	<tr>
 <td><b>Domiciliarios</b></td>
-		<td><b>Cocineros</b></td>
 	</tr>
 		
 

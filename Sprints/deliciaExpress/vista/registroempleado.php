@@ -32,7 +32,6 @@
 	<select name="rol">
 		<option value="">Selecciona tu cargo</option>
 		<option value="4">Domiciliario</option>
-		<option value="3">Cocinero</option>
 	</select>
 	<input class="b1" type="submit" id="m" name="register">
 	<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>
