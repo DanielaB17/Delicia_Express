@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2021 a las 19:01:34
+-- Tiempo de generación: 02-11-2021 a las 16:36:31
 -- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 7.3.29
+-- Versión de PHP: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `deliciaexpress`
+-- Base de datos: `deliaexpress`
 --
 
 DELIMITER $$
@@ -470,9 +470,10 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`IdRoles`, `NombreRoles`) VALUES
-(1, 'Cliente'),
+(1, 'UsuarioBasico'),
 (2, 'Administrador'),
-(4, 'Domiciliario');
+(3, 'SuperUsuario'),
+(4, 'DentroDelSistema');
 
 -- --------------------------------------------------------
 
@@ -486,6 +487,15 @@ CREATE TABLE `tipo` (
   `DescrTipos` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`IdTipos`, `NombreTipos`, `DescrTipos`) VALUES
+(1, 'Propietario', 'El usuario propietario tiene permisos ilimitados y acceso a todas las capacidades dentro de delicia express excepto modificación de código fuente '),
+(2, 'Domiciliario', 'El usuario domiciliario tiene permisos limitados para solo recibir información de pedidos '),
+(3, 'Cliente', 'El usuario cliente tiene permisos limitados y acceso a solamente a realizar pedidos y compras dentro de delicia express   ');
+
 -- --------------------------------------------------------
 
 --
@@ -498,16 +508,10 @@ CREATE TABLE `usuarios` (
   `ApellidoUsuarios` varchar(100) NOT NULL,
   `EmailUsuarios` varchar(50) NOT NULL,
   `ContrasenaUsuarios` varchar(100) NOT NULL,
-  `IdRoles` int(11) NOT NULL
+  `IdRoles` int(11) NOT NULL,
+  `IdTipos` int(11) NOT NULL,
+  `Eps` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`IdUsuarios`, `NombreUsuarios`, `ApellidoUsuarios`, `EmailUsuarios`, `ContrasenaUsuarios`, `IdRoles`) VALUES
-(39, 'DANIEL', 'MENDEZ', 'dmendez@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1),
-(53, 'Andres', 'a', 'adoncel@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 4);
 
 --
 -- Índices para tablas volcadas
@@ -623,7 +627,8 @@ ALTER TABLE `tipo`
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`IdUsuarios`,`EmailUsuarios`),
   ADD UNIQUE KEY `EmailUsuarios` (`EmailUsuarios`),
-  ADD KEY `IdRoles` (`IdRoles`);
+  ADD KEY `IdRoles` (`IdRoles`),
+  ADD KEY `IdTipos` (`IdTipos`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -693,7 +698,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `IdTipos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdTipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -754,7 +759,8 @@ ALTER TABLE `pedidos`
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`IdRoles`) REFERENCES `roles` (`IdRoles`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`IdRoles`) REFERENCES `roles` (`IdRoles`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`IdTipos`) REFERENCES `tipo` (`IdTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
