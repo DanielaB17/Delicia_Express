@@ -19,7 +19,9 @@ if (isset($_GET['register'])) {
     $EmailUsuarios=$_GET['email'];
     $ContrasenaUsuarios=md5($_GET['contrasena']); 
     $IdRoles=$_GET['idRol'];
-     $a=new Usuarios($IdUsuarios,$NombresUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles);
+    $IdTipos=$_GET['idTipo'];
+    $Eps=$_GET['eps'];
+     $a=new Usuarios($IdUsuarios,$NombresUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles,$IdTipos,$Eps);
     $dao->registrar($a);
     echo '<span class="mensaje">¡¡REGISTRO INSERTADO CORRECTAMENTE!!</span>';   
 } 

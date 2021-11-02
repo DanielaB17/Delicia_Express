@@ -13,10 +13,10 @@
 	<!--<a id="r" href="registrorestaurante.php"><button class="r">Restaurantes</button></a>
 	<a id="c" href="registroempleado.php"><button class="r">Soy Empleado</button></a>-->
 <header>
-	<h1 id="tit">REGISTRO CLIENTE</h1>
+	<h1 id="tit">REGISTRO USUARIOS</h1>
 </header>
 <form method="GET" action="../controlador/controladorregistro.php"> 
-	<p>Hola! Nos complace saber que deseas registrarte y empezar a usar nuestros servicios, a continuacion encontraras un formulario, diligencialo correctamente y asi podras empezar a disfrutar.</p>
+	<p>Registre aqui los datos referentes a los usuarios registrados.</p>
 	<input type="hidden" class="ctexto" id="nombre" name="idUser" ><br><br>
 	<label>Nombres completos</label>
 	<input type="text" class="ctexto" id="nombre" name="nombres" ><br><br>
@@ -28,6 +28,11 @@
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>IdRoles</label>
 	<input type="text" class="ctexto" id="nombre" name="idRol" ><br><br>
+	<label>IdTipos</label>
+	<input type="text" class="ctexto" id="nombre" name="idTipo" ><br><br>
+	<label>Eps</label>
+	<input type="text" class="ctexto" id="nombre" name="eps" ><br><br>
+	
 	<input class="b1" type="submit" id="m" name="register">
 	<!--<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>-->
 </form>

@@ -6,14 +6,18 @@ private $ApellidoUsuarios;
 private $EmailUsuarios;
 private $ContrasenaUsuarios;
 private $IdRoles;
+private $IdTipos;
+private $Eps;
 
-function __construct($IdUsuarios,$NombreUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles){
+function __construct($IdUsuarios,$NombreUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles,$IdTipos,$Eps){
     $this->IdUsuarios=$IdUsuarios;
     $this->NombreUsuarios=$NombreUsuarios;
     $this->ApellidoUsuarios=$ApellidoUsuarios;
     $this->EmailUsuarios=$EmailUsuarios; 
     $this->ContrasenaUsuarios=$ContrasenaUsuarios;
     $this->IdRoles=$IdRoles; 
+    $this->IdTipos=$IdTipos;
+    $this->Eps=$Eps;
 }
 
 function getIdUsuarios() {
@@ -63,41 +67,19 @@ function  getIdRoles() {
 function  setIdRoles($IdRoles){
     $this->IdRoles= $IdRoles;
 }
+function setIdTipos($IdTipos){
+    $this->IdTipos= $IdTipos;
+}
+function getIdTipos(){
+    return $this->IdTipos;
+}
+function setEps($Eps){
+    $this->Eps= $Eps;
+}
+function getEps(){
+    return $this->Eps;
+}
 }
 
-class Domiciliarios{
-    private $IdDomiciliarios;
-    private $AseguradoraSoat;
-    private $LicenciaConduccion;
-    
-    function __construct($IdDomiciliarios,$AseguradoraSoat,$LicenciaConduccion){
-        $this->IdDomiciliarios=$IdDomiciliarios;
-        $this->AseguradoraSoat=$AseguradoraSoat;
-        $this->$LicenciaConduccion=$LicenciaConduccion;
-    }
-    
-    function getIdDomiciliarios() {
-        return $this->IdDomiciliarios;
-    }
-    
-    function setIdDomiciliarios($IdDomiciliarios) {
-        $this->IdDomiciliarios = $IdDomiciliarios;
-    }
-    
-    function getAseguradoraSoat() {
-        return $this->AseguradoraSoat;
-    }
-    
-    function setAseguradoraSoat($AseguradoraSoat) {
-        $this->AseguradoraSoat = $AseguradoraSoat;
-    }
-    
-    function getLicenciaConduccion() {
-        return $this->LicenciaConduccion;
-    }
-    
-    function setLicenciaConduccion($LicenciaConduccion) {
-        $this->LicenciaConduccion = $LicenciaConduccion;
-    }
-    }
+
 ?>

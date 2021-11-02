@@ -12,7 +12,9 @@ return[
     $fila['ApellidoUsuarios'],
     $fila['EmailUsuarios'],
     $fila['ContrasenaUsuarios'],
-    $fila['IdRoles']
+    $fila['IdRoles'],
+	$fila['IdTipos'],
+	$fila['Eps']
 ];
 }
 
@@ -47,6 +49,10 @@ return[
 	<input type="password" class="ctexto" id="contraseña" name="contrasena" value="<?php echo $consulta[4]?>"><br><br>
 	<label>IdRoles</label>
 	<input type="text" class="ctexto" id="nombre" name="idRol" value="<?php echo $consulta[5]?>" ><br><br>
+	<label>IdTipos</label>
+	<input type="text" class="ctexto" id="nombre" name="idTipo" value="<?php echo $consulta[6]?>" ><br><br>
+	<label>Eps</label>
+	<input type="text" class="ctexto" id="nombre" name="eps" value="<?php echo $consulta[7]?>" ><br><br>
 	<input class="b1" type="submit" id="m"  name="update" value="Actualizar">
 	<!--<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>-->
 </form>

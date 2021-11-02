@@ -19,18 +19,10 @@ if (isset($_GET['update'])) {
     $EmailUsuarios=$_GET['email'];
     $ContrasenaUsuarios=$_GET['contrasena'];
     $IdRoles=$_GET['idRol'];
-    $a=new Usuarios($IdUsuarios,$NombreUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles);
+    $IdTipos=$_GET['idTipo'];
+    $Eps=$_GET['eps'];
+    $a=new Usuarios($IdUsuarios,$NombreUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles,$IdTipos,$Eps);
     $dao->modificar($a);
-    echo '<span class="mensaje">¡¡SE ACTUALIZÓ CORRECTAMENTE!!</span>';
-}
-
-$dao1=new DaoUsuariosImpl1();
-if (isset($_GET['update1'])) {
-    $IdDomiciliarios=$_GET['IdDomiciliarios'];
-    $AseguradoraSoat=$_GET['AseguradoraSoat'];    
-    $LicenciaConduccion=$_GET['LicenciaConduccion'];
-    $a1=new Domiciliarios($IdDomiciliarios,$AseguradoraSoat,$LicenciaConduccion);
-    $dao1->modificar1($a1);
     echo '<span class="mensaje">¡¡SE ACTUALIZÓ CORRECTAMENTE!!</span>';
 }
 ?> 
