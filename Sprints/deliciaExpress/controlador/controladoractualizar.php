@@ -23,7 +23,16 @@ if (isset($_GET['update'])) {
     $dao->modificar($a);
     echo '<span class="mensaje">¡¡SE ACTUALIZÓ CORRECTAMENTE!!</span>';
 }
-           
+
+$dao1=new DaoUsuariosImpl1();
+if (isset($_GET['update1'])) {
+    $IdDomiciliarios=$_GET['IdDomiciliarios'];
+    $AseguradoraSoat=$_GET['AseguradoraSoat'];    
+    $LicenciaConduccion=$_GET['LicenciaConduccion'];
+    $a1=new Domiciliarios($IdDomiciliarios,$AseguradoraSoat,$LicenciaConduccion);
+    $dao1->modificar1($a1);
+    echo '<span class="mensaje">¡¡SE ACTUALIZÓ CORRECTAMENTE!!</span>';
+}
 ?> 
 </body>
 </html>

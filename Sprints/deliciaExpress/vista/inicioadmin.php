@@ -14,7 +14,7 @@
 	<h1 id="tit">ADMINISTRADOR</h1>
 	<nav>
 		<a class="l1" href="inicioadmin.php">INICIO</a>
-	    <a class="l1" href="adminverusuarios.php">VER USUARIOS</a>
+	    <a class="l1" href="listarusuarios.php">VER USUARIOS</a>
 	</nav>		
 </header>
 <div>

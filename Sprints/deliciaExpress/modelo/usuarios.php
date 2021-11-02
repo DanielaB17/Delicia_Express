@@ -64,3 +64,40 @@ function  setIdRoles($IdRoles){
     $this->IdRoles= $IdRoles;
 }
 }
+
+class Domiciliarios{
+    private $IdDomiciliarios;
+    private $AseguradoraSoat;
+    private $LicenciaConduccion;
+    
+    function __construct($IdDomiciliarios,$AseguradoraSoat,$LicenciaConduccion){
+        $this->IdDomiciliarios=$IdDomiciliarios;
+        $this->AseguradoraSoat=$AseguradoraSoat;
+        $this->$LicenciaConduccion=$LicenciaConduccion;
+    }
+    
+    function getIdDomiciliarios() {
+        return $this->IdDomiciliarios;
+    }
+    
+    function setIdDomiciliarios($IdDomiciliarios) {
+        $this->IdDomiciliarios = $IdDomiciliarios;
+    }
+    
+    function getAseguradoraSoat() {
+        return $this->AseguradoraSoat;
+    }
+    
+    function setAseguradoraSoat($AseguradoraSoat) {
+        $this->AseguradoraSoat = $AseguradoraSoat;
+    }
+    
+    function getLicenciaConduccion() {
+        return $this->LicenciaConduccion;
+    }
+    
+    function setLicenciaConduccion($LicenciaConduccion) {
+        $this->LicenciaConduccion = $LicenciaConduccion;
+    }
+    }
+?>
