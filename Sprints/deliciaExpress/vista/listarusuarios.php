@@ -55,6 +55,51 @@
 	<a href="../vista/registrousuarios.php"><input type="button" value="Registrar" class="boton2"></a>
 </div>
 
-
+<div class="Main">
+<h1 id="subt" align="center">Listado de Restaurantes</h1>
+<a href="../vista/listarusuarios.php"><input type="button" value="Recargar tabla" class="boton1"></a>
+<table class="table">
+            <thead>
+                <tr>
+                    <th>IdRestaurantes</th>
+                    <th>Nombres Dueño</th>
+                    <th>Email</th>
+                    <th>Numero Dueño</th>
+					<th>Contraseña</th>
+					<th>Tipo de Persona</th>
+					<th>NIT</th>
+					<th>Nombre del Restaurante</th>
+					<th>Celular del Restaurante</th>
+					<th>Barrio</th>
+					<th>Acciones</th>
+                </tr>
+            </thead>
+			<tbody>		
+			<?php
+			    include('../controlador/controladorlistarres.php');
+                foreach ($Restaurantes as $key) {
+            ?>
+			<tr>
+            <td><?php echo  $key->getIdRestaurantes() ?></td>
+			<td><?php echo  $key->getNombresDue() ?></td>
+			<td><?php echo  $key->getEmail() ?></td>
+			<td><?php echo  $key->getNumeroDue() ?></td>
+			<td><?php echo  $key->getContrasena() ?></td>
+			<td><?php echo  $key->getTipoPersona() ?></td>  
+			<td><?php echo  $key->getNIT() ?></td>  
+			<td><?php echo  $key->getNomRes() ?></td> 
+			<td><?php echo  $key->getCelularRes() ?></td>  
+			<td><?php echo  $key->getBarrio() ?></td>      
+			<td>		
+			<a href="../controlador/controladoreliminarres.php?IdRestaurantes=<?php echo $key->getIdRestaurantes();?>"><input type="submit" value="Eliminar" ></a>
+			<a href="actualizarrestaurantes.php?IdRestaurantes=<?php echo $key->getIdRestaurantes();?>"><input type="submit" value="Actualizar" name="update"></a>
+			</td>
+			</tr>
+			<?php
+			}
+			?>
+			</tbody> 
+	<a href="../vista/registrorestaurantes.php"><input type="button" value="Registrar" class="boton2"></a>
+</div>
 </body>
 </html>

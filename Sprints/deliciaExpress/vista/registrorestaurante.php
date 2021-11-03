@@ -16,31 +16,27 @@
 	<h1 id="tit">REGISTRO RESTAURANTE</h1>
 </header>
 
-<form method="post" action="../modelo/registro3.php"> 
-	<label>Nombres dueño*</label>
-	<input type="text" placeholder="Nombres del dueño del restaurante" required="Completa este campo" name="nombres" id="nombres"><br><br>
-	<label>Correo electronico*</label>
-	<input type="email" placeholder="Correo del dueño del restaurante" required="Completa este campo" name="email" id="email"><br><br>
-	<label>Numero de telefono*</label>
-	<input type="tel" placeholder="Numero de telefono del dueño del restaurante" required="Completa este campo" name="numero" id="numero"><br><br>
-	<label>Crea tu contraseña*</label>
-	<input type="password" required="Completa este campo" name="contrasena" id="contrasena" ><br><br>
-	<label>Tipo de persona*</label>
-	<select required="completa este campo" name="tipoPersona" id="tipoPersona">
-		<option></option>
-		<option>Juridica</option>
-		<option>Natural</option>
-	</select><br><br>
-	<label>NIT restaurante*</label>
-	<input type="text" required="Completa este campo" name="nit" id="nit"><br><br>
-	<label>Nombre del restaurante*</label>
-	<input type="text" placeholder="Nombres del restaurante" required="Completa este campo" name="nombreres" id="nombreres"><br><br>
-	<label>Celular del restaurante*</label>
-	<input type="tel" placeholder="Telefono del restaurante" required="Completa este campo" name="celres" id="celres"><br><br>
-	<label>Barrio*</label>
-	<input type="text" placeholder="Barrio donde se encuentra el restaurante" required="Completa este campo" name="barrio" id="barrio"><br><br>
+<form method="post" action="../controlador/controladorregistrores.php"> 
+<input type="hidden" class="ctexto" id="id" name="idres"><br><br>
+	<label>Nombres del dueño</label>
+	<input type="text" class="ctexto" id="nombre" name="nombresDue"><br><br>
+	<label>Email</label>
+	<input type="text" class="ctexto" id="correo" name="correo"><br><br>
+	<label>Numero Dueño</label>
+	<input type="email" class="ctexto" id="numerod" name="numerodue"><br><br>	
+	<label>Contrasena</label>
+	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
+	<label>TipoPersona</label>
+	<input type="text" class="ctexto" id="tipop" name="tipopersona" ><br><br>
+	<label>NIT</label>
+	<input type="text" class="ctexto" id="nitt" name="nit" ><br><br>
+	<label>Nombre Restaurante</label>
+	<input type="text" class="ctexto" id="nombrer" name="nombreres" ><br><br>
+    <label>Celular del Restaurante</label>
+	<input type="text" class="ctexto" id="cel" name="celres" ><br><br>
+	<label>Barrio</label>
+	<input type="text" class="ctexto" id="barrior" name="barrio" ><br><br>
 	<input class="b1" type="submit" id="m" name="register">
-	<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>
 </form>
 	<a id="v" href="../vista/inicio.php"><button class="b1"> VOLVER AL INICIO</button></a>
 	
