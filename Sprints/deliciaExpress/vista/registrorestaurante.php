@@ -21,9 +21,9 @@
 	<label>Nombres del dueño</label>
 	<input type="text" class="ctexto" id="nombre" name="nombresDue"><br><br>
 	<label>Email</label>
-	<input type="text" class="ctexto" id="correo" name="correo"><br><br>
+	<input type="email" class="ctexto" id="correo" name="correo"><br><br>
 	<label>Numero Dueño</label>
-	<input type="email" class="ctexto" id="numerod" name="numerodue"><br><br>	
+	<input type="text" class="ctexto" id="numerod" name="numerodue"><br><br>	
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>TipoPersona</label>

@@ -24,6 +24,7 @@ if (isset($_GET['update'])) {
     $a=new Usuarios($IdUsuarios,$NombreUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles,$IdTipos,$Eps);
     $dao->modificar($a);
     echo '<span class="mensaje">¡¡SE ACTUALIZÓ CORRECTAMENTE!!</span>';
+    header ("Location: ../vista/listarusuarios.php");
 }
 ?> 
 </body>

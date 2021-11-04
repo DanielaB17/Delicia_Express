@@ -1,3 +1,6 @@
+<?php
+include('../controlador/controladorlistar.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,9 +15,10 @@
 </head>
 <body>
 
-<div class="Main">
+<div id="Main">
 <h1 id="subt" align="center">Listado de usuarios</h1>
 <a href="../vista/listarusuarios.php"><input type="button" value="Recargar tabla" class="boton1"></a>
+<a href="../vista/registrousuarios.php"><input type="button" value="Registrar" class="boton2"></a>
 <table class="table">
             <thead>
                 <tr>
@@ -31,7 +35,6 @@
             </thead>
 			<tbody>		
 			<?php
-			    include('../controlador/controladorlistar.php');
                 foreach ($Usuarios as $key) {
             ?>
 			<tr>
@@ -45,20 +48,21 @@
 			<td><?php echo  $key->getEps() ?></td>      
 			<td>		
 			<a href="../controlador/controladoreliminar.php?IdUsuarios=<?php echo $key->getIdUsuarios();?>"><input type="submit" value="Eliminar" ></a>
-			<a href="actualizarusuarios.php?IdUsuarios=<?php echo $key->getIdUsuarios();?>"><input type="submit" value="Actualizar" name="update"></a>
+			<a href="../vista/actualizarusuarios.php?IdUsuarios=<?php echo $key->getIdUsuarios();?>"><input type="submit" value="Actualizar" name="update"></a>
 			</td>
 			</tr>
 			<?php
 			}
 			?>
 			</tbody> 
-	<a href="../vista/registrousuarios.php"><input type="button" value="Registrar" class="boton2"></a>
+		</table>
+
 </div>
 
-<div class="Main">
-<h1 id="subt" align="center">Listado de Restaurantes</h1>
-<a href="../vista/listarusuarios.php"><input type="button" value="Recargar tabla" class="boton1"></a>
-<table class="table">
+<div id="main1">
+<h1 id="subt1" align="center">Listado de Restaurantes</h1>
+<a href="../vista/registrorestaurante.php"><input type="button" value="Registrar" id="boton3"></a>
+<table id="tabla1">
             <thead>
                 <tr>
                     <th>IdRestaurantes</th>
@@ -76,7 +80,6 @@
             </thead>
 			<tbody>		
 			<?php
-			    include('../controlador/controladorlistarres.php');
                 foreach ($Restaurantes as $key) {
             ?>
 			<tr>
@@ -92,14 +95,14 @@
 			<td><?php echo  $key->getBarrio() ?></td>      
 			<td>		
 			<a href="../controlador/controladoreliminarres.php?IdRestaurantes=<?php echo $key->getIdRestaurantes();?>"><input type="submit" value="Eliminar" ></a>
-			<a href="actualizarrestaurantes.php?IdRestaurantes=<?php echo $key->getIdRestaurantes();?>"><input type="submit" value="Actualizar" name="update"></a>
+			<a href="../vista/actualizarrestaurantes.php?IdRestaurantes=<?php echo $key->getIdRestaurantes();?>"><input type="submit" value="Actualizar" name="update"></a>
 			</td>
 			</tr>
 			<?php
 			}
 			?>
 			</tbody> 
-	<a href="../vista/registrorestaurantes.php"><input type="button" value="Registrar" class="boton2"></a>
+		</table>
 </div>
 </body>
 </html>

@@ -13,6 +13,8 @@
 require('../dao/daoUsuariosImpl.php');
 $dao=new DaoUsuariosImpl();
 $Usuarios=$dao->listar();
+$dao1=new DaoRestaurantesImpl();
+$Restaurantes=$dao1->listar1();
 ?>    
 </body>
 </html>

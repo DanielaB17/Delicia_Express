@@ -44,9 +44,9 @@ return[
 	<label>Nombres del dueño</label>
 	<input type="text" class="ctexto" id="nombre" name="nombresDue" value="<?php echo $consulta[1]?>"><br><br>
 	<label>Email</label>
-	<input type="text" class="ctexto" id="correo" name="correo" value="<?php echo $consulta[2]?>"><br><br>
+	<input type="email" class="ctexto" id="correo" name="correo" value="<?php echo $consulta[2]?>"><br><br>
 	<label>Numero Dueño</label>
-	<input type="email" class="ctexto" id="numerod" name="numerodue" value="<?php echo $consulta[3]?>"><br><br>	
+	<input type="text" class="ctexto" id="numerod" name="numerodue" value="<?php echo $consulta[3]?>"><br><br>	
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena" value="<?php echo $consulta[4]?>"><br><br>
 	<label>TipoPersona</label>

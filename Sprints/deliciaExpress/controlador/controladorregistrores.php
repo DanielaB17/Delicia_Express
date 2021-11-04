@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php 
-require('../vista/registrorestaurantes.php');
+require('../vista/registrorestaurante.php');
 require('../dao/daoUsuariosImpl.php');
 $dao=new DaoRestaurantesImpl();
 if (isset($_GET['register'])) {
@@ -23,11 +23,11 @@ if (isset($_GET['register'])) {
     $NomRes=$_GET['nombreres'];
     $CelularRes=$_GET['celres'];
     $Barrio=$_GET['barrio'];
-    $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$ContrasenaUsuarios,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio);
+    $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio);
     $dao->registrar1($a1);
     echo '<span class="mensaje">¡¡REGISTRO INSERTADO CORRECTAMENTE!!</span>';   
 } 
-           
+        
 ?>    
 </body>
 </html>

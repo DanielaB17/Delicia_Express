@@ -24,6 +24,7 @@ if (isset($_GET['register'])) {
      $a=new Usuarios($IdUsuarios,$NombresUsuarios,$ApellidoUsuarios,$EmailUsuarios,$ContrasenaUsuarios,$IdRoles,$IdTipos,$Eps);
     $dao->registrar($a);
     echo '<span class="mensaje">¡¡REGISTRO INSERTADO CORRECTAMENTE!!</span>';   
+    header ("Location: ../vista/listarusuarios.php");
 } 
            
 ?>    
