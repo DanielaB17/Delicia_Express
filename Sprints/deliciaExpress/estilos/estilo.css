@@ -126,10 +126,11 @@ img{
 }
 table{
 	border-radius: 13px;
-	margin-left: 390px;
+	margin-left: 245px;
 	margin-top: 30px;
 	width:500px;
 	text-align: center;
+	width: 800px;
 }
 h2{
 	margin-top: 50px;

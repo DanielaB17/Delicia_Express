@@ -8,9 +8,10 @@ html{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
+	margin:0;
 }
 body{
-	width: 1280px;
+	width: 1400px;
 	height: 2024px;
 	background-color: rgba(29,45,59,0.8);
 }
@@ -73,7 +74,7 @@ div{
 	border:2px none solid;
 	text-align: center;
 	margin-top: 3%;
-	margin-left: 20%;
+	margin-left: 10%;
 	margin-right: 15%;
 
 }
@@ -107,9 +108,8 @@ td{
 
 }
 .boton1{
-
 	margin-top: 1%;
-	margin-left: 920px;
+	margin-left: 720px;
 	font-family: 'Kalam', cursive;
 	font-size: 16px;
 	width: 150px;
@@ -117,9 +117,16 @@ td{
 }
 .boton2{
 	float: right;
-    margin-top: -3.9%;
-	margin-left: 500px;
-	margin-right: 50px;
+    margin-top: 1%;
+	margin-right: 170px;	
+	font-family: 'Kalam', cursive;
+	font-size: 16px;
+	width: 150px;
+    height: 50px;
+}
+.boton4{
+    margin-top: 1%;
+	margin-left: 3%;	
 	font-family: 'Kalam', cursive;
 	font-size: 16px;
 	width: 150px;

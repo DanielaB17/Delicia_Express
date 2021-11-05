@@ -17,6 +17,7 @@ include('../controlador/controladorlistar.php');
 
 <div id="Main">
 <h1 id="subt" align="center">Listado de usuarios</h1>
+<a href="../vista/inicioadmin.php"><input type="button" value="Regresar" class="boton4"></a>
 <a href="../vista/listarusuarios.php"><input type="button" value="Recargar tabla" class="boton1"></a>
 <a href="../vista/registrousuarios.php"><input type="button" value="Registrar" class="boton2"></a>
 <table class="table">
@@ -61,7 +62,7 @@ include('../controlador/controladorlistar.php');
 
 <div id="main1">
 <h1 id="subt1" align="center">Listado de Restaurantes</h1>
-<a href="../vista/registrorestaurante.php"><input type="button" value="Registrar" id="boton3"></a>
+<a href="../vista/registrores.php"><input type="button" value="Registrar" id="boton3"></a>
 <table id="tabla1">
             <thead>
                 <tr>

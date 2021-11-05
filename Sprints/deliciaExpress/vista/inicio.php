@@ -57,13 +57,6 @@
 			echo $fila['total'];
 		?>	
 		</td>
-		
-	</tr>
-	<tr>
-		<td><b>Total Usuarios</b></td>	
-		<td><b>Restaurantes Aliados</b></td>
-	</tr>
-	<tr>
 		<td>
 		<?php
 		include '../modelo/conexion.php';
@@ -72,10 +65,13 @@
 			$fila = mysqli_fetch_assoc($result);
 			echo $fila['total'];
 		?>		
-		</td>	
+		</td>
+		
 	</tr>
 	<tr>
-<td><b>Domiciliarios</b></td>
+		<td><b>Total Usuarios</b></td>	
+		<td><b>Restaurantes Aliados</b></td>
+		<td><b>Domiciliarios</b></td>
 	</tr>
 		
 
