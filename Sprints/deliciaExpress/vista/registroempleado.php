@@ -28,11 +28,10 @@
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>Nombre EPS</label>
 	<input type="text" class="ctexto" id="eps" name="eps"><br><br>
-	<label>Selecciona tu cargo</label>
-	<select name="rol">
-		<option value="">Selecciona tu cargo</option>
-		<option value="4">Domiciliario</option>
-	</select>
+	<label>Aseguradora Soat</label>
+	<input type="text" class="ctexto" id="aseguradora" name="aseguradorasoat"><br><br>
+	<label>Licencia Conduccion</label>
+	<input type="text" class="ctexto" id="licencia" name="licenciaconduccion"><br><br>
 	<input class="b1" type="submit" id="m" name="register">
 	<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>
 </form>
