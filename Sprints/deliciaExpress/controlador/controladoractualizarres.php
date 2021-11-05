@@ -17,10 +17,10 @@ if (isset($_GET['update'])) {
     $NombresDue=$_GET['nombresDue'];    
     $Email=$_GET['correo'];
     $NumeroDue=$_GET['numerodue'];
-    $Contrasena=$_GET['contrasena'];
+    $Contrasena=md5($_GET['contrasena']);
     $TipoPersona=$_GET['tipopersona'];
     $NIT=$_GET['nit'];
-    $NomRes=$_GET['nombreres'];
+    $NomRes=$_GET['nrestaurante'];
     $CelularRes=$_GET['celres'];
     $Barrio=$_GET['barrio'];
     $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio);

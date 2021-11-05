@@ -25,7 +25,7 @@ if (isset($_GET['register'])) {
     $Barrio=$_GET['barrio'];
     $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio);
     $dao->registrar1($a1);
-    echo '<span class="mensaje">¡¡REGISTRO INSERTADO CORRECTAMENTE!!</span>';   
+    header ("Location: ../vista/listarusuarios.php");   
 } 
         
 ?>    

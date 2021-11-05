@@ -54,7 +54,7 @@ return[
 	<label>NIT</label>
 	<input type="text" class="ctexto" id="nitt" name="nit" value="<?php echo $consulta[6]?>" ><br><br>
 	<label>Nombre Restaurante</label>
-	<input type="text" class="ctexto" id="nombrer" name="nombreres" value="<?php echo $consulta[7]?>" ><br><br>
+	<input type="text" class="ctexto" id="nombrer" name="nrestaurante" value="<?php echo $consulta[7]?>" ><br><br>
     <label>Celular del Restaurante</label>
 	<input type="text" class="ctexto" id="cel" name="celres" value="<?php echo $consulta[8]?>" ><br><br>
 	<label>Barrio</label>

@@ -17,7 +17,7 @@ if (isset($_GET['update'])) {
     $NombreUsuarios=$_GET['nombres'];    
     $ApellidoUsuarios=$_GET['apellidos'];
     $EmailUsuarios=$_GET['email'];
-    $ContrasenaUsuarios=$_GET['contrasena'];
+    $ContrasenaUsuarios=md5($_GET['contrasena']);
     $IdRoles=$_GET['idRol'];
     $IdTipos=$_GET['idTipo'];
     $Eps=$_GET['eps'];
