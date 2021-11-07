@@ -59,16 +59,10 @@ header nav .l1:hover{
     color: #979D3B;
 	box-shadow: 0 0 10px #979D3B;
 }
-#subt{
+.subt{
 	font-family: 'Kalam', cursive;
 	color: #fff;
 
-}
-div{
-	background-color:rgb(143,146,132);
-	height: 65%;
-	margin-top: 50px;
-	padding-top: 50px;
 }
 .table{
 	border:2px none solid;
@@ -86,15 +80,20 @@ td{
 	background-color: #fff;
 	padding: 10px;
 }
-#Main{
-	margin-top: 2px;
+.Main{
+	background-color:rgb(143,146,132);
 	margin-bottom: initial;
+	height: 65%;
+	margin-top: 50px;
+	padding-top: 3%;
 }
-#main1{
+.main1{
 	margin-top: 10px;
+	background-color:rgb(143,146,132);
+	height: 65%;
+	padding-top: 3%;
 }
-#subt1{
-	margin-top: 2%;
+.subt1{
 	font-family: 'Kalam', cursive;
 	color: #fff;
 
@@ -109,7 +108,7 @@ td{
 }
 .boton1{
 	margin-top: 1%;
-	margin-left: 720px;
+	margin-left: 920px;
 	font-family: 'Kalam', cursive;
 	font-size: 16px;
 	width: 150px;
@@ -124,14 +123,7 @@ td{
 	width: 150px;
     height: 50px;
 }
-.boton4{
-    margin-top: 1%;
-	margin-left: 3%;	
-	font-family: 'Kalam', cursive;
-	font-size: 16px;
-	width: 150px;
-    height: 50px;
-}
+
 #boton3{
 	float: right;
 	margin-top: 2%;

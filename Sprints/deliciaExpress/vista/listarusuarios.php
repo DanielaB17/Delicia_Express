@@ -14,10 +14,15 @@ include('../controlador/controladorlistar.php');
     
 </head>
 <body>
-
-<div id="Main">
-<h1 id="subt" align="center">Listado de usuarios</h1>
-<a href="../vista/inicioadmin.php"><input type="button" value="Regresar" class="boton4"></a>
+<header>
+	<h1 id="tit">ADMINISTRADOR</h1>
+	<nav>
+		<a class="l1" href="../vista/inicioadmin.php">INICIO</a>
+	    <a class="l1" href="../vista/listarusuarios.php">VER USUARIOS</a>
+	</nav>		
+</header>
+<div class="Main">
+<h1 class="subt" align="center">Listado de usuarios</h1>
 <a href="../vista/listarusuarios.php"><input type="button" value="Recargar tabla" class="boton1"></a>
 <a href="../vista/registrousuarios.php"><input type="button" value="Registrar" class="boton2"></a>
 <table class="table">
@@ -60,8 +65,8 @@ include('../controlador/controladorlistar.php');
 
 </div>
 
-<div id="main1">
-<h1 id="subt1" align="center">Listado de Restaurantes</h1>
+<div class="main1">
+<h1 class="subt1" align="center">Listado de Restaurantes</h1>
 <a href="../vista/registrores.php"><input type="button" value="Registrar" id="boton3"></a>
 <table id="tabla1">
             <thead>
