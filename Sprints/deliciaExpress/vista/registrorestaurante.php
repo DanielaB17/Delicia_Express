@@ -16,7 +16,7 @@
 	<h1 id="tit">REGISTRO RESTAURANTE</h1>
 </header>
 
-<form method="GET" action="../controlador/controladorregistrores.php"> 
+<form method="GET" action="../controlador/controllerres.php"> 
 <input type="hidden" class="ctexto" id="id" name="idres"><br><br>
 	<label>Nombres del dueño</label>
 	<input type="text" class="ctexto" id="nombre" name="nombresDue"><br><br>
