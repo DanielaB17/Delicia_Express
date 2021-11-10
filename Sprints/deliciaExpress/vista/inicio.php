@@ -82,6 +82,11 @@
 	<p id="textfooter">Contactanos <br>
 	Numeros: 3182883910-3002608446-3229564274 <br>
 	Direccion: Carrera 9 Este N 30C-36 San Mateo</p>
+
+	<a href="https://www.facebook.com/Delicia3xpress/ " target="blank"><img class="img" src="../imagenes/facebook.png"></a>
+	<a href="https://www.instagram.com/delicia_3xpress/"  target="blank"><img class="img1" src="../imagenes/instagram.png"></a>
+	<a href="https://vm.tiktok.com/ZM8Xm84K1/"target="blank"><img class="img2" src="../imagenes/tiktok.png"  target="blank"></a>
+	<a href="https://wa.me/message/PTI7KX3QGC5MF1 "  target="blank"><img class="img3" src="../imagenes/what.png"></a>
 </footer>
 
 </body>

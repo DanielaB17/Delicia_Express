@@ -149,3 +149,24 @@ td,tr{
 	font-family: mg-md;
 	font-size: 50px;
 }
+.img{
+	width: 40px;
+	height: 40px;
+	margin-top: 25px;
+	margin-left: 43%;
+}
+.img1{
+	width: 40px;
+	height: 40px;
+	margin-left: 47%;
+}
+.img2{
+	width: 40px;
+	height: 40px;
+	margin-left: 51%;
+}
+.img3{
+	width: 40px;
+	height: 40px;
+	margin-left: 55%;
+}
