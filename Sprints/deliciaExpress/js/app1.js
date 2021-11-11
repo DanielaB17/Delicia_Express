@@ -1,5 +1,5 @@
 addEventListener('DOMContentLoaded',()=>{
-  const imagenes=['../imagenes/imagen.jpg','../imagenes/hamburguesa.jpg','../imagenes/salchipapa.jpg','../imagenes/perro.jpg','../imagenes/general.jpeg'];
+  const imagenes=['imagenes/imagen.jpg','imagenes/hamburguesa.jpg','imagenes/salchipapa.jpg','imagenes/perro.jpg','imagenes/general.jpeg'];
   let i=1;
   const img1=document.querySelector('#imagen');
   const img2=document.querySelector('#imagen1');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<a href="inicio.php"><img src="../imagenes/logo.png" id="logo"></a>
+	<a href="../index.php"><img src="../imagenes/logo.png" id="logo"></a>
 	<title>DELICIA EXPRESS</title>	
 	<link rel="stylesheet" type="text/css" href="../estilos/estilo21.css">
 	<meta charset="utf-8">

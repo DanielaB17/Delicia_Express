@@ -22,7 +22,7 @@
 	<input type="submit" class="b1" value="Iniciar sesión">
 	<a href="registrocliente.php">No tienes una cuenta? <u>REGISTRATE</u> </a>
 </form>
-	<a id="v" href="../vista/inicio.php"><button class="b1">VOLVER AL INICIO</button></a>
+	<a id="v" href="../index.php"><button class="b1">VOLVER AL INICIO</button></a>
 	
 
 <footer>

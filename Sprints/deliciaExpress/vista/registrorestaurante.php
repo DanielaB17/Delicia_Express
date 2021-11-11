@@ -38,7 +38,7 @@
 	<input type="text" class="ctexto" id="barrior" name="barrio" ><br><br>
 	<input class="b1" type="submit" id="m" name="register">
 </form>
-	<a id="v" href="../vista/inicio.php"><button class="b1"> VOLVER AL INICIO</button></a>
+	<a id="v" href="../index.php"><button class="b1"> VOLVER AL INICIO</button></a>
 	
 <footer>
 	Contactanos <br>

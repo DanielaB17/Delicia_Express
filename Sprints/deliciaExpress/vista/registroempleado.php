@@ -35,7 +35,7 @@
 	<input class="b1" type="submit" id="m" name="register">
 	<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>
 </form>
-	<a id="v" href="../vista/inicio.php"><button class="b1"> VOLVER AL INICIO</button></a>
+	<a id="v" href="../index.php"><button class="b1"> VOLVER AL INICIO</button></a>
 	
 <footer>
 	Contactanos <br>
