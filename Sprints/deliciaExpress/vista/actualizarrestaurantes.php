@@ -23,6 +23,7 @@ return[
 ?>
 <!DOCTYPE html>
 <html lang="es">
+<script src="../js/control.js"></script>
 <head>
 	<title>DELICIA EXPRESS</title>		
 	<link rel="stylesheet" type="text/css" href="../estilos/estilo2.css">
@@ -42,7 +43,7 @@ return[
 	<p>Hola! Nos complace saber que deseas registrarte y empezar a usar nuestros servicios, a continuacion encontraras un formulario, diligencialo correctamente y asi podras empezar a disfrutar.</p>
 	<input type="hidden" class="ctexto" id="id" name="IdRestaurantes" value="<?php echo $consulta[0]?>"><br><br>
 	<label>Nombres del dueño</label>
-	<input type="text" class="ctexto" id="nombre" name="nombresDue" value="<?php echo $consulta[1]?>"><br><br>
+	<input type="text" class="ctexto" id="nombre" name="nombresDue" value="<?php echo $consulta[1]?>" onkeypress="return soloLetras(event)"><br><br>
 	<label>Email</label>
 	<input type="email" class="ctexto" id="correo" name="correo" value="<?php echo $consulta[2]?>"><br><br>
 	<label>Numero Dueño</label>
@@ -50,7 +51,7 @@ return[
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena" value="<?php echo $consulta[4]?>"><br><br>
 	<label>TipoPersona</label>
-	<input type="text" class="ctexto" id="tipop" name="tipopersona" value="<?php echo $consulta[5]?>" ><br><br>
+	<input type="text" class="ctexto" id="tipop" name="tipopersona" value="<?php echo $consulta[5]?>"  onkeypress="return soloLetras(event)"><br><br>
 	<label>NIT</label>
 	<input type="text" class="ctexto" id="nitt" name="nit" value="<?php echo $consulta[6]?>" ><br><br>
 	<label>Nombre Restaurante</label>

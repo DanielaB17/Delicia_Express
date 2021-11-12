@@ -8,6 +8,7 @@
 	<meta name="description" content="Esta pagina trata de una aplicacion interactiva que permite al usuario crear su propio plato, el cliente arrastra los ingredientes y se va formando su plato">
 	<meta name="author" content="Juan Pablo Doncel">
 	<meta name="viewport" content="width-device-width, initial-scale-1.0">
+	<script src="../js/control.js"></script>
 </head>
 <body>
 	<a id="r" href="registroempleado.php"><button class="r">Soy Empleado</button></a>
@@ -19,7 +20,7 @@
 <form method="GET" action="../controlador/controllerres.php"> 
 <input type="hidden" class="ctexto" id="id" name="idres"><br><br>
 	<label>Nombres del dueño</label>
-	<input type="text" class="ctexto" id="nombre" name="nombresDue"><br><br>
+	<input type="text" class="ctexto" id="nombre" name="nombresDue" onkeypress="return soloLetras(event)"><br><br>
 	<label>Email</label>
 	<input type="email" class="ctexto" id="correo" name="correo"><br><br>
 	<label>Numero Dueño</label>
@@ -27,7 +28,7 @@
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>TipoPersona</label>
-	<input type="text" class="ctexto" id="tipop" name="tipopersona" ><br><br>
+	<input type="text" class="ctexto" id="tipop" name="tipopersona"  onkeypress="return soloLetras(event)"><br><br>
 	<label>NIT</label>
 	<input type="text" class="ctexto" id="nitt" name="nit" ><br><br>
 	<label>Nombre Restaurante</label>

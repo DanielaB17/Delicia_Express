@@ -8,6 +8,7 @@
 	<meta name="description" content="Esta pagina trata de una aplicacion interactiva que permite al usuario crear su propio plato, el cliente arrastra los ingredientes y se va formando su plato">
 	<meta name="author" content="Juan Pablo Doncel">
 	<meta name="viewport" content="width-device-width, initial-scale-1.0">
+	<script src="../js/control.js"></script>
 </head>
 <body>
 	<a id="r" href="registrorestaurante.php"><button class="r">Restaurantes</button></a>
@@ -19,15 +20,15 @@
 <form method="post" action="../modelo/registro2.php"> 
 	<p>Hola! Nos complace saber que deseas registrarte y ser parte de nuestro equipo, a continuacion encontraras un formulario, diligencialo correctamente y asi podras empezar a disfrutar.</p>
 	<label>Nombres completos</label>
-	<input type="text" class="ctexto" id="nombre" name="nombres"><br><br>
+	<input type="text" class="ctexto" id="nombre" name="nombres" onkeypress="return soloLetras(event)"><br><br>
 	<label>Apellidos completos</label>
-	<input type="text" class="ctexto" id="apellido" name="apellidos"><br><br>
+	<input type="text" class="ctexto" id="apellido" name="apellidos" onkeypress="return soloLetras(event)"><br><br>
 	<label>Correo Electronico</label>
 	<input type="email" class="ctexto" id="correo" name="email"><br><br>	
 	<label>Crea tu contraseña</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>Nombre EPS</label>
-	<input type="text" class="ctexto" id="eps" name="eps"><br><br>
+	<input type="text" class="ctexto" id="eps" name="eps" onkeypress="return soloLetras(event)"><br><br>
 	<label>Aseguradora Soat</label>
 	<input type="text" class="ctexto" id="aseguradora" name="aseguradorasoat"><br><br>
 	<label>Licencia Conduccion</label>

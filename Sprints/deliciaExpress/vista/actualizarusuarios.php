@@ -21,6 +21,7 @@ return[
 ?>
 <!DOCTYPE html>
 <html lang="es">
+<script src="../js/control.js"></script>
 <head>
 	<title>DELICIA EXPRESS</title>		
 	<link rel="stylesheet" type="text/css" href="../estilos/estilo2.css">
@@ -40,9 +41,9 @@ return[
 	<p>Hola! Nos complace saber que deseas registrarte y empezar a usar nuestros servicios, a continuacion encontraras un formulario, diligencialo correctamente y asi podras empezar a disfrutar.</p>
 	<input type="hidden" class="ctexto" id="nombre" name="IdUsuarios" value="<?php echo $consulta[0]?>"><br><br>
 	<label>Nombres completos</label>
-	<input type="text" class="ctexto" id="nombre" name="nombres" value="<?php echo $consulta[1]?>"><br><br>
+	<input type="text" class="ctexto" id="nombre" name="nombres" value="<?php echo $consulta[1]?>" onkeypress="return soloLetras(event)"><br><br>
 	<label>Apellidos completos</label>
-	<input type="text" class="ctexto" id="apellido" name="apellidos" value="<?php echo $consulta[2]?>"><br><br>
+	<input type="text" class="ctexto" id="apellido" name="apellidos" value="<?php echo $consulta[2]?>" onkeypress="return soloLetras(event)"><br><br>
 	<label>Correo Electronico</label>
 	<input type="email" class="ctexto" id="correo" name="email" value="<?php echo $consulta[3]?>"><br><br>	
 	<label>Crea tu contraseña</label>
@@ -52,7 +53,7 @@ return[
 	<label>IdTipos</label>
 	<input type="text" class="ctexto" id="nombre" name="idTipo" value="<?php echo $consulta[6]?>" ><br><br>
 	<label>Eps</label>
-	<input type="text" class="ctexto" id="nombre" name="eps" value="<?php echo $consulta[7]?>" ><br><br>
+	<input type="text" class="ctexto" id="nombre" name="eps" value="<?php echo $consulta[7]?>"  onkeypress="return soloLetras(event)"><br><br>
 	<input class="b1" type="submit" id="m"  name="update" value="Actualizar">
 	<!--<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>-->
 </form>
