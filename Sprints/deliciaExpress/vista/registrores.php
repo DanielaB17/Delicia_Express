@@ -16,13 +16,13 @@
 </header>
 
 <form method="GET" action="../controlador/controladorregistrores.php"> 
-<input type="hidden" class="ctexto" id="id" name="idres"><br><br>
+<input type="hidden" class="ctexto" id="id" name="idres" ><br><br>
 	<label>Nombres del dueño</label>
 	<input type="text" class="ctexto" id="nombre" name="nombresDue" onkeypress="return soloLetras(event)"><br><br>
 	<label>Email</label>
 	<input type="email" class="ctexto" id="correo" name="correo"><br><br>
 	<label>Numero Dueño</label>
-	<input type="text" class="ctexto" id="numerod" name="numerodue"><br><br>	
+	<input type="text" class="ctexto" id="numerod" name="numerodue" onkeypress="return soloNumeros(event)"><br><br>	
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>TipoPersona</label>
@@ -32,9 +32,11 @@
 	<label>Nombre Restaurante</label>
 	<input type="text" class="ctexto" id="nombrer" name="nombreres" ><br><br>
     <label>Celular del Restaurante</label>
-	<input type="text" class="ctexto" id="cel" name="celres" ><br><br>
+	<input type="text" class="ctexto" id="cel" name="celres"  onkeypress="return soloNumeros(event)"><br><br>
 	<label>Barrio</label>
 	<input type="text" class="ctexto" id="barrior" name="barrio" ><br><br>
+	<label>Id Roles</label>
+	<input type="text" class="ctexto" name="idrol" onkeypress="return soloNumeros(event)><br><br>
 	<input class="b1" type="submit" id="m" name="register">
 </form>
 	<a id="v" href="../vista/listarusuarios.php"><button class="b1"> VOLVER AL LISTADO</button></a>

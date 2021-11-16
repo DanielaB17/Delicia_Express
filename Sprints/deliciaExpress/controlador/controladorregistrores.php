@@ -23,7 +23,8 @@ if (isset($_GET['register'])) {
     $NomRes=$_GET['nombreres'];
     $CelularRes=$_GET['celres'];
     $Barrio=$_GET['barrio'];
-    $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio);
+    $IdRoles=$_GET['idrol'];
+    $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio,$IdRoles);
     $dao->registrar1($a1);
     header ("Location: ../vista/listarusuarios.php");   
 } 

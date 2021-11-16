@@ -30,9 +30,9 @@
 	<label>Nombre EPS</label>
 	<input type="text" class="ctexto" id="eps" name="eps" onkeypress="return soloLetras(event)"><br><br>
 	<label>Aseguradora Soat</label>
-	<input type="text" class="ctexto" id="aseguradora" name="aseguradorasoat"><br><br>
+	<input type="text" class="ctexto" id="aseguradora" name="aseguradorasoat" onkeypress="return soloLetras(event)"><br><br>
 	<label>Licencia Conduccion</label>
-	<input type="text" class="ctexto" id="licencia" name="licenciaconduccion"><br><br>
+	<input type="text" class="ctexto" id="licencia" name="licenciaconduccion" onkeypress="return soloNumeros(event)"><br><br>
 	<input class="b1" type="submit" id="m" name="register">
 	<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>
 </form>

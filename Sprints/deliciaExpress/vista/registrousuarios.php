@@ -28,9 +28,9 @@
 	<label>Crea tu contraseña</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>IdRoles</label>
-	<input type="text" class="ctexto" id="nombre" name="idRol" ><br><br>
+	<input type="text" class="ctexto" id="nombre" name="idRol" onkeypress="return soloNumeros(event)"><br><br>
 	<label>IdTipos</label>
-	<input type="text" class="ctexto" id="nombre" name="idTipo" ><br><br>
+	<input type="text" class="ctexto" id="nombre" name="idTipo" onkeypress="return soloNumeros(event)"><br><br>
 	<label>Eps</label>
 	<input type="text" class="ctexto" id="nombre" name="eps" onkeypress="return soloLetras(event)"><br><br>
 	

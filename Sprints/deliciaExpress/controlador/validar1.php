@@ -28,7 +28,7 @@ if ($lista['IdRoles']=="1") {
 }elseif ($lista['IdRoles']=="2") {
 	$_SESSION['user']=$lista['NombreUsuarios'];
 	header("location:../vista/inicioadmin.php");
-}elseif ($lista1['']=="") {
+}elseif ($lista1['IdRoles']=="5") {
 	$_SESSION['user']=$lista1['NomRes'];
 	header("location:../vista/iniciorestaurante.php");
 }

@@ -17,24 +17,23 @@
 	<h1 id="tit">REGISTRO RESTAURANTE</h1>
 </header>
 
-<form method="GET" action="../controlador/controllerres.php"> 
-<input type="hidden" class="ctexto" id="id" name="idres"><br><br>
+<form method="POST" action="../modelo/registro3.php"> 
 	<label>Nombres del dueño</label>
 	<input type="text" class="ctexto" id="nombre" name="nombresDue" onkeypress="return soloLetras(event)"><br><br>
 	<label>Email</label>
 	<input type="email" class="ctexto" id="correo" name="correo"><br><br>
 	<label>Numero Dueño</label>
-	<input type="text" class="ctexto" id="numerod" name="numerodue"><br><br>	
+	<input type="text" class="ctexto" id="numerod" name="numerodue" onkeypress="return soloNumeros(event)"><br><br>	
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena"><br><br>
 	<label>TipoPersona</label>
-	<input type="text" class="ctexto" id="tipop" name="tipopersona"  onkeypress="return soloLetras(event)"><br><br>
+	<input type="text" class="ctexto" id="tipop" name="tipoPersona"  onkeypress="return soloLetras(event)"><br><br>
 	<label>NIT</label>
-	<input type="text" class="ctexto" id="nitt" name="nit" ><br><br>
+	<input type="text" class="ctexto" id="nitt" name="nit" onkeypress="return soloNumeros(event)"><br><br>
 	<label>Nombre Restaurante</label>
 	<input type="text" class="ctexto" id="nombrer" name="nombreres" ><br><br>
     <label>Celular del Restaurante</label>
-	<input type="text" class="ctexto" id="cel" name="celres" ><br><br>
+	<input type="text" class="ctexto" id="cel" name="celres" onkeypress="return soloNumeros(event)"><br><br>
 	<label>Barrio</label>
 	<input type="text" class="ctexto" id="barrior" name="barrio" ><br><br>
 	<input class="b1" type="submit" id="m" name="register">

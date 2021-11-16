@@ -23,7 +23,8 @@ if (isset($_GET['update'])) {
     $NomRes=$_GET['nrestaurante'];
     $CelularRes=$_GET['celres'];
     $Barrio=$_GET['barrio'];
-    $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio);
+    $IdRoles=$_GET['idrol'];
+    $a1=new Restaurantes($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio,$IdRoles);
     $dao->modificar1($a1);
     echo '<span class="mensaje">¡¡SE ACTUALIZÓ CORRECTAMENTE!!</span>';
     header ("Location: ../vista/listarusuarios.php");

@@ -2,7 +2,7 @@
 if (isset($_POST['button'])) {
 	session_start();
 	session_destroy();
-	header("location:../vista/inicio.php");	
+	header("location:../index.php");	
 	exit();
 }
 ?>

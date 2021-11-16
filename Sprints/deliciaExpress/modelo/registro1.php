@@ -6,10 +6,8 @@ if(isset($_POST['register'])){
 	$apellidos=($_POST['apellidos']);
 	$email=($_POST['email']);
 	$contrasena=md5($_POST['contrasena']);		
-	  $consulta="INSERT INTO usuarios(NombreUsuarios,ApellidoUsuarios,EmailUsuarios,ContrasenaUsuarios,IdRoles) values('$nombres','$apellidos','$email','$contrasena','1')";
-	  /*$consulta1="insert into clientes(,Apellido,Email,Contrasena) values('$nombres','$apellidos','$email','$contrasena')";*/
+	  $consulta="INSERT INTO usuarios(NombreUsuarios,ApellidoUsuarios,EmailUsuarios,ContrasenaUsuarios,IdTipos,IdRoles) values('$nombres','$apellidos','$email','$contrasena','3','1')";
 	  $resultado=mysqli_query($conn,$consulta);
-	  /*$resultado1=mysqli_query($conn,$consulta1);*/
 session_start();
 	  if($resultado==1){
 	  	$_SESSION['user']=$nombres;

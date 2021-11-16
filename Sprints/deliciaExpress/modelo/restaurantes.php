@@ -10,8 +10,9 @@ private $NIT;
 private $NomRes;
 private $CelularRes;
 private $Barrio;
+private $IdRoles;
 
-function __construct($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio){
+function __construct($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio,$IdRoles){
     $this->IdRestaurantes=$IdRestaurantes;
     $this->NombresDue=$NombresDue;
     $this->Email=$Email;
@@ -22,6 +23,7 @@ function __construct($IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$
     $this->NomRes=$NomRes;
     $this->CelularRes=$CelularRes;
     $this->Barrio=$Barrio;
+    $this->IdRoles=$IdRoles;
 
 }
 
@@ -95,6 +97,12 @@ function setBarrio($Barrio){
 }
 function getBarrio(){
     return $this->Barrio;
+}
+function setIdRoles($IdRoles){
+    $this->IdRoles= $IdRoles;
+}
+function getIdRoles(){
+    return $this->IdRoles;
 }
 }
 

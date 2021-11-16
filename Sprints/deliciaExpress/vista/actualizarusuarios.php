@@ -49,9 +49,9 @@ return[
 	<label>Crea tu contraseña</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena" value="<?php echo $consulta[4]?>"><br><br>
 	<label>IdRoles</label>
-	<input type="text" class="ctexto" id="nombre" name="idRol" value="<?php echo $consulta[5]?>" ><br><br>
+	<input type="text" class="ctexto" id="nombre" name="idRol" value="<?php echo $consulta[5]?>" onkeypress="return soloNumeros(event)><br><br>
 	<label>IdTipos</label>
-	<input type="text" class="ctexto" id="nombre" name="idTipo" value="<?php echo $consulta[6]?>" ><br><br>
+	<input type="text" class="ctexto" id="nombre" name="idTipo" value="<?php echo $consulta[6]?>" onkeypress="return soloNumeros(event)><br><br>
 	<label>Eps</label>
 	<input type="text" class="ctexto" id="nombre" name="eps" value="<?php echo $consulta[7]?>"  onkeypress="return soloLetras(event)"><br><br>
 	<input class="b1" type="submit" id="m"  name="update" value="Actualizar">

@@ -100,9 +100,10 @@ class DaoRestaurantesImpl extends Conexion implements daoRestaurantes{
         $NomRes=$a1->getNomRes();
         $CelularRes=$a1->getCelularRes();
         $Barrio=$a1->getBarrio();
-        $sql="INSERT INTO restaurantes VALUES(?,?,?,?,?,?,?,?,?,?)";
+        $IdRoles=$a1->getIdRoles();
+        $sql="INSERT INTO restaurantes VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $stmt=$this->getCnx()->prepare($sql);
-        $stmt->execute([$IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio]);        
+        $stmt->execute([$IdRestaurantes,$NombresDue,$Email,$NumeroDue,$Contrasena,$TipoPersona,$NIT,$NomRes,$CelularRes,$Barrio,$IdRoles]);        
         } else {
             echo $this->getCnx().' Es nulo <br>';
         }
@@ -124,8 +125,9 @@ public function modificar1(Restaurantes $a1){
     $NomRes=$a1->getNomRes();
     $CelularRes=$a1->getCelularRes();
     $Barrio=$a1->getBarrio();
+    $IdRoles=$a1->getIdRoles();
     $sql="UPDATE restaurantes
-    SET NombresDue ='$NombresDue', Email ='$Email', NumeroDue = '$NumeroDue', Contrasena = '$Contrasena', TipoPersona = '$TipoPersona', NIT = '$NIT', NomRes = '$NomRes', CelularRes = '$CelularRes', Barrio = '$Barrio'
+    SET NombresDue ='$NombresDue', Email ='$Email', NumeroDue = '$NumeroDue', Contrasena = '$Contrasena', TipoPersona = '$TipoPersona', NIT = '$NIT', NomRes = '$NomRes', CelularRes = '$CelularRes', Barrio = '$Barrio' ,IdRoles='$IdRoles'
     WHERE IdRestaurantes ='$IdRestaurantes'";
     $stmt=$this->getCnx()->prepare($sql);
     $stmt->execute();
@@ -145,7 +147,7 @@ public function listar1(){
         $lista = array();
         $stmt->execute();
         foreach ($stmt as $key ) { 
-            $a1 = new Restaurantes(null,null,null,null,null,null,null,null,null,null);
+            $a1 = new Restaurantes(null,null,null,null,null,null,null,null,null,null,null);
             $a1->setIdRestaurantes($key['IdRestaurantes']);
             $a1->setNombresDue($key['NombresDue']);
             $a1->setEmail($key['Email']);
@@ -155,7 +157,8 @@ public function listar1(){
             $a1->setNIT($key['NIT']); 
             $a1->setNomRes($key['NomRes']); 
             $a1->setCelularRes($key['CelularRes']); 
-            $a1->setBarrio($key['Barrio']);              
+            $a1->setBarrio($key['Barrio']);   
+            $a1->setIdRoles($key['IdRoles']);       
             array_push($lista,$a1);            
         }        
         //$this->getCnx()->close();

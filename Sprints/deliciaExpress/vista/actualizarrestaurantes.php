@@ -16,7 +16,8 @@ return[
 	$fila['NIT'],
 	$fila['NomRes'],
     $fila['CelularRes'],
-	$fila['Barrio']
+	$fila['Barrio'],
+	$fila['IdRoles']
 ];
 }
 
@@ -47,19 +48,21 @@ return[
 	<label>Email</label>
 	<input type="email" class="ctexto" id="correo" name="correo" value="<?php echo $consulta[2]?>"><br><br>
 	<label>Numero Dueño</label>
-	<input type="text" class="ctexto" id="numerod" name="numerodue" value="<?php echo $consulta[3]?>"><br><br>	
+	<input type="text" class="ctexto" id="numerod" name="numerodue" value="<?php echo $consulta[3]?>" onkeypress="return soloNumeros(event)><br><br>	
 	<label>Contrasena</label>
 	<input type="password" class="ctexto" id="contraseña" name="contrasena" value="<?php echo $consulta[4]?>"><br><br>
 	<label>TipoPersona</label>
 	<input type="text" class="ctexto" id="tipop" name="tipopersona" value="<?php echo $consulta[5]?>"  onkeypress="return soloLetras(event)"><br><br>
 	<label>NIT</label>
-	<input type="text" class="ctexto" id="nitt" name="nit" value="<?php echo $consulta[6]?>" ><br><br>
+	<input type="text" class="ctexto" id="nitt" name="nit" value="<?php echo $consulta[6]?>" onkeypress="return soloNumeros(event)><br><br>
 	<label>Nombre Restaurante</label>
 	<input type="text" class="ctexto" id="nombrer" name="nrestaurante" value="<?php echo $consulta[7]?>" ><br><br>
     <label>Celular del Restaurante</label>
-	<input type="text" class="ctexto" id="cel" name="celres" value="<?php echo $consulta[8]?>" ><br><br>
+	<input type="text" class="ctexto" id="cel" name="celres" value="<?php echo $consulta[8]?>" onkeypress="return soloNumeros(event)><br><br>
 	<label>Barrio</label>
 	<input type="text" class="ctexto" id="barrior" name="barrio" value="<?php echo $consulta[9]?>" ><br><br>
+	<label>Id rol</label>
+	<input type="text" class="ctexto" name="idrol" value="<?php echo $consulta[10]?>" onkeypress="return soloNumeros(event)><br><br>
 	<input class="b1" type="submit" id="m"  name="update" value="Actualizar">
 	<!--<a href="../vista/iniciosesion.php">Ya te registraste? <u>INICIA SESIÓN</u> </a>-->
 </form>
