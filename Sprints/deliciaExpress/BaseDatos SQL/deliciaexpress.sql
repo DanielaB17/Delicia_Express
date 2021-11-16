@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2021 a las 03:56:16
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Tiempo de generación: 16-11-2021 a las 22:58:19
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -257,21 +257,6 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
---
-
-CREATE TABLE `clientes` (
-  `IdClientes` int(11) NOT NULL,
-  `IdUsuarios` int(11) NOT NULL,
-  `EmailClientes` varchar(100) NOT NULL,
-  `ContrasenaClientes` varchar(100) NOT NULL,
-  `CiudadClientes` varchar(150) NOT NULL,
-  `DireccionClientes` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `detallefacturas`
 --
 
@@ -279,7 +264,6 @@ CREATE TABLE `detallefacturas` (
   `IdFacturas` int(11) DEFAULT NULL,
   `IdProductos` int(11) DEFAULT NULL,
   `CantidadProductos` int(11) DEFAULT NULL,
-  `IdClientes` int(11) DEFAULT NULL,
   `IdDomiciliarios` int(11) DEFAULT NULL,
   `DescripcionPedidos` varchar(200) DEFAULT NULL,
   `ValorTotal` varchar(100) DEFAULT NULL
@@ -293,12 +277,13 @@ CREATE TABLE `detallefacturas` (
 
 CREATE TABLE `detallepedidos` (
   `IdPedidos` int(11) NOT NULL,
-  `IdClientes` int(11) NOT NULL,
   `IdProductos` int(11) NOT NULL,
   `IdDomiciliarios` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
   `PrecioUnitario` decimal(25,2) NOT NULL,
-  `PrecioTotal` decimal(25,2) NOT NULL
+  `PrecioTotal` decimal(25,2) NOT NULL,
+  `Direccion` varchar(100) NOT NULL,
+  `Barrio` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -345,7 +330,7 @@ CREATE TABLE `envios` (
 
 CREATE TABLE `facturas` (
   `Idfacturas` int(11) NOT NULL,
-  `IdClientes` int(11) NOT NULL,
+  `IdUsuarios` int(11) NOT NULL,
   `IdPedidos` int(11) NOT NULL,
   `FechaPedidos` datetime NOT NULL DEFAULT current_timestamp(),
   `IdmedioPago` int(11) NOT NULL
@@ -372,7 +357,8 @@ CREATE TABLE `mediospago` (
 CREATE TABLE `pedidos` (
   `IdPedidos` int(11) NOT NULL,
   `IdProductos` int(11) NOT NULL,
-  `Cantidad` tinyint(3) UNSIGNED NOT NULL
+  `Cantidad` tinyint(3) UNSIGNED NOT NULL,
+  `IdUsuarios` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -461,16 +447,17 @@ CREATE TABLE `restaurantes` (
   `NIT` varchar(100) NOT NULL,
   `NomRes` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `CelularRes` varchar(100) NOT NULL,
-  `Barrio` varchar(100) NOT NULL
+  `Barrio` varchar(100) NOT NULL,
+  `IdRoles` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `restaurantes`
 --
 
-INSERT INTO `restaurantes` (`IdRestaurantes`, `NombresDue`, `Email`, `NumeroDue`, `Contrasena`, `TipoPersona`, `NIT`, `NomRes`, `CelularRes`, `Barrio`) VALUES
-(4, 'Camilo ', 'camilocc@gmail.com', '3224752670', '907fc10f1338514846ef98a4e284c8e8', 'Juridica', '123456787654', 'Dominos', '7152345', 'Soacha'),
-(7, 'Adrian Romero', 'aromero@gmail.com', '3224432670', '827ccb0eea8a706c4c34a16891f84e7b', 'Juridica', '12345678789', 'Rappi', '7152345', 'Soacha');
+INSERT INTO `restaurantes` (`IdRestaurantes`, `NombresDue`, `Email`, `NumeroDue`, `Contrasena`, `TipoPersona`, `NIT`, `NomRes`, `CelularRes`, `Barrio`, `IdRoles`) VALUES
+(8, 'pepe peres', 'peperes@gmail.com', '1524689', '1f32aa4c9a1d2ea010adcf2348166a04', 'natural', '54869', 'deli', '3256214', 'soacha', 5),
+(11, 'juan', 'juan@gmail.com', '1524689', '827ccb0eea8a706c4c34a16891f84e7b', 'natural', '25663325', 'rapi', '3256214', 'bosa', 5);
 
 -- --------------------------------------------------------
 
@@ -491,7 +478,8 @@ INSERT INTO `roles` (`IdRoles`, `NombreRoles`) VALUES
 (1, 'UsuarioBasico'),
 (2, 'Administrador'),
 (3, 'SuperUsuario'),
-(4, 'DentroDelSistema');
+(4, 'DentroDelSistema'),
+(5, 'Restaurante');
 
 -- --------------------------------------------------------
 
@@ -539,18 +527,12 @@ INSERT INTO `usuarios` (`IdUsuarios`, `NombreUsuarios`, `ApellidoUsuarios`, `Ema
 (58, 'Daniela', 'Benitez', 'hedabehi@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 2, 1, ''),
 (68, 'Juan Pablo', 'Doncel Gutierrez', 'juan@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 4, 2, 'Famisanar'),
 (72, 'Admin', 'Admin', 'admin@deliciaexpress.com', '21232f297a57a5a743894a0e4a801fc3', 2, 1, ''),
-(75, 'Jhon', 'Cortes', 'jcortes@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 3, '');
+(75, 'Jhon', 'Cortes', 'jcortes@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 3, ''),
+(76, 'jhon', 'pedraza', 'jpedraza@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 3, '');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`IdClientes`,`EmailClientes`),
-  ADD KEY `IdUsuarios` (`IdUsuarios`);
 
 --
 -- Indices de la tabla `detallefacturas`
@@ -558,15 +540,13 @@ ALTER TABLE `clientes`
 ALTER TABLE `detallefacturas`
   ADD KEY `IdFacturas` (`IdFacturas`),
   ADD KEY `IdProductos` (`IdProductos`),
-  ADD KEY `IdClientes` (`IdClientes`),
   ADD KEY `IdDomiciliarios` (`IdDomiciliarios`);
 
 --
 -- Indices de la tabla `detallepedidos`
 --
 ALTER TABLE `detallepedidos`
-  ADD KEY `IdPedidos` (`IdPedidos`,`IdClientes`,`IdProductos`,`IdDomiciliarios`),
-  ADD KEY `IdClientes` (`IdClientes`),
+  ADD KEY `IdPedidos` (`IdPedidos`,`IdProductos`,`IdDomiciliarios`),
   ADD KEY `IdProductos` (`IdProductos`),
   ADD KEY `IdDomiciliarios` (`IdDomiciliarios`);
 
@@ -589,10 +569,11 @@ ALTER TABLE `envios`
 --
 ALTER TABLE `facturas`
   ADD PRIMARY KEY (`Idfacturas`),
-  ADD KEY `IdClientes` (`IdClientes`),
+  ADD KEY `IdClientes` (`IdUsuarios`),
   ADD KEY `IdPedidos` (`IdPedidos`),
   ADD KEY `IdmedioPago` (`IdmedioPago`),
-  ADD KEY `Fecha` (`FechaPedidos`);
+  ADD KEY `Fecha` (`FechaPedidos`),
+  ADD KEY `IdUsuarios` (`IdUsuarios`);
 
 --
 -- Indices de la tabla `mediospago`
@@ -605,7 +586,8 @@ ALTER TABLE `mediospago`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`IdPedidos`),
-  ADD KEY `pedidos_ibfk_2` (`IdProductos`);
+  ADD KEY `pedidos_ibfk_2` (`IdProductos`),
+  ADD KEY `IdUsuarios` (`IdUsuarios`);
 
 --
 -- Indices de la tabla `productos`
@@ -635,7 +617,8 @@ ALTER TABLE `reg_update_usuario`
 -- Indices de la tabla `restaurantes`
 --
 ALTER TABLE `restaurantes`
-  ADD PRIMARY KEY (`IdRestaurantes`,`Email`);
+  ADD PRIMARY KEY (`IdRestaurantes`,`Email`),
+  ADD KEY `IdRol` (`IdRoles`);
 
 --
 -- Indices de la tabla `roles`
@@ -661,12 +644,6 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  MODIFY `IdClientes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `domiciliarios`
@@ -714,13 +691,13 @@ ALTER TABLE `reg_insert_usuario`
 -- AUTO_INCREMENT de la tabla `restaurantes`
 --
 ALTER TABLE `restaurantes`
-  MODIFY `IdRestaurantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IdRestaurantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `IdRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo`
@@ -732,17 +709,11 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`IdUsuarios`) REFERENCES `usuarios` (`IdUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `detallefacturas`
@@ -750,7 +721,6 @@ ALTER TABLE `clientes`
 ALTER TABLE `detallefacturas`
   ADD CONSTRAINT `detallefacturas_ibfk_1` FOREIGN KEY (`IdFacturas`) REFERENCES `facturas` (`Idfacturas`),
   ADD CONSTRAINT `detallefacturas_ibfk_2` FOREIGN KEY (`IdProductos`) REFERENCES `productos` (`IdProductos`),
-  ADD CONSTRAINT `detallefacturas_ibfk_3` FOREIGN KEY (`IdClientes`) REFERENCES `clientes` (`IdClientes`),
   ADD CONSTRAINT `detallefacturas_ibfk_4` FOREIGN KEY (`IdDomiciliarios`) REFERENCES `domiciliarios` (`IdDomiciliarios`);
 
 --
@@ -758,7 +728,6 @@ ALTER TABLE `detallefacturas`
 --
 ALTER TABLE `detallepedidos`
   ADD CONSTRAINT `detallepedidos_ibfk_1` FOREIGN KEY (`IdPedidos`) REFERENCES `pedidos` (`IdPedidos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `detallepedidos_ibfk_2` FOREIGN KEY (`IdClientes`) REFERENCES `clientes` (`IdClientes`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `detallepedidos_ibfk_3` FOREIGN KEY (`IdProductos`) REFERENCES `productos` (`IdProductos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `detallepedidos_ibfk_4` FOREIGN KEY (`IdDomiciliarios`) REFERENCES `domiciliarios` (`IdDomiciliarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -779,15 +748,22 @@ ALTER TABLE `envios`
 -- Filtros para la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  ADD CONSTRAINT `facturas_ibfk_1` FOREIGN KEY (`IdClientes`) REFERENCES `clientes` (`IdClientes`),
   ADD CONSTRAINT `facturas_ibfk_2` FOREIGN KEY (`IdPedidos`) REFERENCES `pedidos` (`IdPedidos`),
-  ADD CONSTRAINT `facturas_ibfk_3` FOREIGN KEY (`IdmedioPago`) REFERENCES `mediospago` (`IdmedioPago`);
+  ADD CONSTRAINT `facturas_ibfk_3` FOREIGN KEY (`IdmedioPago`) REFERENCES `mediospago` (`IdmedioPago`),
+  ADD CONSTRAINT `facturas_ibfk_4` FOREIGN KEY (`IdUsuarios`) REFERENCES `usuarios` (`IdUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`IdProductos`) REFERENCES `productos` (`IdProductos`);
+  ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`IdProductos`) REFERENCES `productos` (`IdProductos`),
+  ADD CONSTRAINT `pedidos_ibfk_3` FOREIGN KEY (`IdUsuarios`) REFERENCES `usuarios` (`IdUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `restaurantes`
+--
+ALTER TABLE `restaurantes`
+  ADD CONSTRAINT `restaurantes_ibfk_1` FOREIGN KEY (`IdRoles`) REFERENCES `roles` (`IdRoles`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `usuarios`
