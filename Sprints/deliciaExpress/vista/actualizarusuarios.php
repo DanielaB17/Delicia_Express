@@ -35,7 +35,7 @@ return[
 	<!--<a id="r" href="registrorestaurante.php"><button class="r">Restaurantes</button></a>
 	<a id="c" href="registroempleado.php"><button class="r">Soy Empleado</button></a>-->
 <header>
-	<h1 id="tit">ACTUALIZAR CLIENTE</h1>
+	<h1 id="tit">ACTUALIZAR USUARIOS</h1>
 </header>
 <form method="GET" action="../controlador/controladoractualizar.php">
 	<p>Hola! Nos complace saber que deseas registrarte y empezar a usar nuestros servicios, a continuacion encontraras un formulario, diligencialo correctamente y asi podras empezar a disfrutar.</p>

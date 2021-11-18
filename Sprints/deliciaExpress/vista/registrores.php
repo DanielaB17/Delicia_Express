@@ -28,15 +28,15 @@
 	<label>TipoPersona</label>
 	<input type="text" class="ctexto" id="tipop" name="tipopersona" onkeypress="return soloLetras(event)"><br><br>
 	<label>NIT</label>
-	<input type="text" class="ctexto" id="nitt" name="nit" ><br><br>
+	<input type="text" class="ctexto" id="nitt" name="nit" onkeypress="return soloNumeros(event)"><br><br>
 	<label>Nombre Restaurante</label>
 	<input type="text" class="ctexto" id="nombrer" name="nombreres" ><br><br>
     <label>Celular del Restaurante</label>
 	<input type="text" class="ctexto" id="cel" name="celres"  onkeypress="return soloNumeros(event)"><br><br>
 	<label>Barrio</label>
-	<input type="text" class="ctexto" id="barrior" name="barrio" ><br><br>
+	<input type="text" class="ctexto" id="barrior" name="barrio" onkeypress="return soloLetras(event)" ><br><br>
 	<label>Id Roles</label>
-	<input type="text" class="ctexto" name="idrol" onkeypress="return soloNumeros(event)><br><br>
+	<input type="text" class="ctexto" name="idrol" onkeypress="return soloNumeros(event)"><br><br>
 	<input class="b1" type="submit" id="m" name="register">
 </form>
 	<a id="v" href="../vista/listarusuarios.php"><button class="b1"> VOLVER AL LISTADO</button></a>
