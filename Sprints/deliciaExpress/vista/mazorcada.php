@@ -23,7 +23,7 @@
 </header>
 <section id="menum">
 <div id="mazorcada">
-		<img id="img" src="../imagenes/ca4.jpg">
+		<img id="img" src="../imagenes/ca4.JPG">
 		<ul id="listmenu">
 			<li>Maiz tierno, carne desmechada, pollo desmechado, papa chip, queso<br>mozzarella, huevo de codorniz.</li>
 			<li>2 ingredientes<br>*Chorizo           *Jalapeños         *Tocineta<br>*Chicharron         *Jamón ahumado<br></li>

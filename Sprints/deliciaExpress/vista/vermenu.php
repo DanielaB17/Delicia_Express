@@ -38,7 +38,7 @@
 		<label class="texto">Pizzas</label>
 	</div>
 	<div class="categorias">
-		<a href="../vista/mazorcada.php"><img id="img3" src="../imagenes/ca4.jpg"><br><br></a>
+		<a href="../vista/mazorcada.php"><img id="img3" src="../imagenes/ca4.JPG"><br><br></a>
 		<label class="texto">Mazorcada</label>
 	</div>
 </section>	

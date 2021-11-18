@@ -83,7 +83,7 @@
 </section>	
 <section id="menup3">
 <div id="perro">
-		<img id="img" src="../imagenes/pe6.jpg">
+		<img id="img" src="../imagenes/pe6.JPG">
 		<ul id="listmenu">
 			<li>PODEROSO(55cm)</li><br>
 			<li>Salchicha Zenu, costillas BBQ, tocineta, jamón ahumado, queso mozzarella,<br>huevo de codorniz, cebolla caramelizada, tres porciones de papa a la francesa,<br>pan de la abuela, gaseosa 1.5 lts.</li>
